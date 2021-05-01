@@ -1,7 +1,9 @@
 import businness.InstructorManager;
 import businness.StudentManager;
+import businness.UserManager;
 import models.Instructor;
 import models.Student;
+import models.User;
 
 public class Main {
 
@@ -11,6 +13,9 @@ public class Main {
 		
 		Student student2 = new Student(2,"Engin","Demiroð","engindemirog","12345",
 				"engin@engin.com",true,"Java Kampý ve C# Kampý");
+		
+		User user= new User(1,"Ahmet","Dalhançer","dalhancerahmet","12345",
+				"dalhancerahmet@gmail.com",true);
 		StudentManager studentManager= new StudentManager();
 		studentManager.getStudentInformation(student);
 		
@@ -21,6 +26,10 @@ public class Main {
 		InstructorManager instructorManager= new InstructorManager();
 		instructorManager.getInstructorInformation(instructor);
 		
+		UserManager userManager= new UserManager();
+		userManager.signIn(student);
+		
+		userManager.addToUser(user,"Eklenen Kullanýcý:");
 	}
 
 }
