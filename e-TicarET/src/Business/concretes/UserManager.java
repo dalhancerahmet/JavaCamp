@@ -1,26 +1,26 @@
 package Business.concretes;
 
 import Business.abstracts.UserService;
-import Core.abstracts.eMailControlService;
+import Core.abstracts.ValidationService;
 import DataAccess.abstracts.UserDao;
 import Entities.concretes.User;
 
 public class UserManager implements UserService{
 	
 	UserDao userDao;
-	eMailControlService emailControlService;
-	public UserManager(UserDao userDao, eMailControlService eMailControlService) {
+	ValidationService validationService;
+	public UserManager(UserDao userDao, ValidationService validationService) {
 		this.userDao= userDao;
-		this.emailControlService=eMailControlService;
+		this.validationService=validationService;
 	}
 	
 
 	@Override
 	public void add(User user) {
-		if(emailControlService.isEmailValid(user.getEmail())) {
+		if(validationService.validationEmail(user) && validationService.isMailConfirm(user) 
+				&& validationService.validationName(user) && validationService.validationPassword(user)) {
 			userDao.add(user);
-		}else {
-			System.out.println("Mail doðru formatta deðil.");
+			System.out.println("Kullanýcý baþarýlý bir þekilde eklendi:"+user.getFirstName()+" "+user.getLastName());
 		}
 		
 	}
