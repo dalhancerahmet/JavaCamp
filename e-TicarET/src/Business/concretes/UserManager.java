@@ -29,13 +29,13 @@ public class UserManager implements UserService{
 
 	@Override
 	public void delete(User user) {
-		// TODO Auto-generated method stub
+		userDao.delete(user);
 		
 	}
 
 	@Override
 	public void update(User user) {
-		// TODO Auto-generated method stub
+		userDao.update(user);
 		
 	}
 	
@@ -47,7 +47,7 @@ public class UserManager implements UserService{
 	@Override
 	public void login(User user) {
 		
-		for (User users : getAll()) {
+		for (User users : this.getAll()) {
 			if(users.getEmail()==user.getEmail() && users.getPassword()==user.getPassword()) {
 				System.out.println("Sisteme giriþ baþarýlý!");
 			}else {
