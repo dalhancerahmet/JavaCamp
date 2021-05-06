@@ -1,5 +1,7 @@
 package Business.concretes;
 
+import java.util.List;
+
 import Business.abstracts.UserService;
 import Core.abstracts.ValidationService;
 import DataAccess.abstracts.UserDao;
@@ -36,5 +38,25 @@ public class UserManager implements UserService{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public List<User> getAll() {
+		return userDao.getAll();
+	}
+
+	@Override
+	public void login(User user) {
+		
+		for (User users : getAll()) {
+			if(users.getEmail()==user.getEmail() && users.getPassword()==user.getPassword()) {
+				System.out.println("Sisteme giriþ baþarýlý!");
+			}else {
+				System.out.println("email veya parola hatalý. Terar deneyiniz!");
+			}
+		}
+	}
+
+
+	
 
 }
