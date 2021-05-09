@@ -14,7 +14,7 @@ public class Main {
 		userManager.add(user);
 		
 		userManager.login(fakeUser);
-
+		userManager.login(user);
 	}
 
 }
