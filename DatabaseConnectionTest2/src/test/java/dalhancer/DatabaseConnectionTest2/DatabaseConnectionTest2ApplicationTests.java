@@ -1,10 +1,10 @@
-package dalhancer.northwind;
+package dalhancer.DatabaseConnectionTest2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NorthwindApplicationTests {
+class DatabaseConnectionTest2ApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dalhancer</groupId>
-	<artifactId>northwind</artifactId>
+	<artifactId>DatabaseConnectionTest2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>northwind</name>
+	<name>DatabaseConnectionTest2</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
